@@ -1,0 +1,14 @@
+version: '1'
+services:
+    session1:
+        build: '.'
+        environment: 
+            - APP_ID=session1
+            ports: 
+                - "8085:8085
+        image: nginx:latest
+        ports: 
+            - 8080:8080
+            - ./default.conf:/etc/nginx/conf.d/default.conf
+        depends_on:
+            - session1 
